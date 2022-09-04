@@ -15,6 +15,7 @@
  :root {
     --primary-text-color: #757575;
     --title-text-color: #212121;
+    --placeholder-color: rgba(117, 117, 117, 0.5);
     --accent-color: #2196F3;
     --accent-white-color: #ffffff;
     --header-studio-color: #000000;
@@ -32,6 +33,7 @@
     --logo-font-size: 26px;
     --hero-font-size: 44px;
     --title-font-size: 36px;
+    --title-modal-font-size: 20px;
     --image-title-font-size: 18px;
     --primary-line-height: 1.14;
     --secondary-line-height: 1.71;
@@ -42,10 +44,12 @@
     --h2-line-height: 1.16;
     --h3-line-height: 1.18;
     --overloy-line-height: 1.56;
+    --title-modal-line-height: 1.15;
     --image-title-line-height: 2.0;
     --primary-letter-spacing: 0.03em;
     --header-letter-spacing: 0.02em;
     --hero-letter-spacing: 0.06em;
+    --placeholder-letter-spacing: 0.01em;
 }
 
 body {
@@ -286,6 +290,7 @@ img {
     background-color: var(--accent-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    padding: 40px;
 }
 
 .modal-button {
@@ -302,6 +307,151 @@ img {
     background-color: transparent;
     padding: 0;
     cursor: pointer;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+    fill: var(--accent-color);
+}
+
+.title-modal {
+    margin-bottom: 12px;
+    font-weight: var(--secondary-font-weight);
+    font-size: var(--title-modal-font-size);
+    line-height: var(--title-modal-line-height);
+    text-align: center;
+    color: var(--header-studio-color);
+}
+
+.contact-form-field {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-form-input-wrapper {
+    position: relative;
+    display: block;
+    margin-top: 4px;
+}
+
+.contact-form-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-input:hover {
+    fill: var(--accent-color);
+    cursor: pointer;
+}
+
+.contact-form-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.contact-form-input:focus+.contact-form-icon {
+    fill: var(--accent-color);
+}
+
+.contact-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    display: block;
+    width: 18px;
+    height: 18px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-message {
+    width: 100%;
+    height: 120px;
+    margin-top: 4px;
+    padding: 12px 16px;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-message:focus {
+    outline: none;
+    border-color: var(--accent-color)
+}
+
+.contact-form-message::placeholder {
+    color: var(--placeholder-color);
+    letter-spacing: var(--placeholder-letter-spacing);
+}
+
+.contact-form-checkbox-wrapper {
+    margin-bottom: 30px;
+}
+
+.contact-form-checkbox-label {
+    display: flex;
+    align-items: center;
+    line-height: var(--secondary-line-height);
+}
+
+.contact-form-checkbox-label::before {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background-image: url(/images/vector.svg);
+    cursor: pointer;
+    content: '';
+    margin-right: 8px;
+}
+
+.contact-form-checkbox:checked+.contact-form-checkbox-label::before {
+    background-image: url(/images/icon-check.svg);
+}
+
+.contact-form-checkbox:focus+.contact-form-checkbox-label::before {
+    background-image: url(/images/icon-check.svg);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.checkbox-link {
+    color: var(--accent-color);
+}
+
+.contact-form-submitt-btn {
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 10px 55px;
+    color: var(--accent-white-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-weight: var(--secondary-font-weight);
+    font-size: var(--secondary-font-size);
+    line-height: var(--hero-button-line-height);
+    text-align: center;
+    letter-spacing: var(--hero-letter-spacing);
+    font-family: inherit;
+    cursor: pointer;
+    border-style: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
