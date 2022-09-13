@@ -24,6 +24,7 @@
     --secondary-background-color: #F5F4FA;
     --hero-hover-color: #188CE8;
     --backdrop-background-color: rgba(0, 0, 0, 0.2);
+    --footer-form-placeholder-color: rgba(255, 255, 255, 0.6);
     --primary-font-weight: 400;
     --secondary-font-weight: 700;
     --header-font-weight: 500;
@@ -46,6 +47,7 @@
     --overloy-line-height: 1.56;
     --title-modal-line-height: 1.15;
     --image-title-line-height: 2.0;
+    --footer-form-line-height: 1.25;
     --primary-letter-spacing: 0.03em;
     --header-letter-spacing: 0.02em;
     --hero-letter-spacing: 0.06em;
@@ -715,6 +717,58 @@ img {
 .call.lnk:hover,
 .call.link:focus {
     background-color: var(--accent-color);
+}
+
+.footer-form-list {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-form-list-element+.footer-form-list-element {
+    margin-left: 12px;
+}
+
+.footer-form-input {
+    width: 358px;
+    height: 50px;
+    padding-left: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: var(--accent-white-color);
+    background-color: var(--hero-background-color);
+}
+
+.footer-form-input::placeholder {
+    color: var(--footer-form-placeholder-color);
+    line-height: var(--footer-form-line-height);
+}
+
+.footer-form-input:hover,
+.footer-form-input:focus {
+    outline: none;
+}
+
+.footer-form-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 28px;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    border: var(--accent-color);
+    color: var(--accent-white-color);
+}
+
+.footer-form-button:hover,
+.footer-form-button:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+.footer-form-button-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
 }
 
 
